@@ -15,7 +15,7 @@ composer install
 ## Install node dependency
 
 ```sh
-yarn
+yarn 
 ```
 
 ## Copy environment
