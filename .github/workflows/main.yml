@@ -37,7 +37,7 @@ jobs:
           port: ${{ secrets.PORT }}
           key: ${{ secrets.SSHKEY }}
           script: |
-          docker pull abdieryy/ajk-cicd-penugasan3:latest
-          docker compose up -d
-          docker exec -it tamiyochi-laravel php artisan migrate
-          docker exec -it tamiyochi-laravel php artisan db:seed
+            docker pull abdieryy/ajk-cicd-penugasan3:latest
+            docker compose up -d
+            docker exec -it tamiyochi-laravel php artisan migrate
+            docker exec -it tamiyochi-laravel php artisan db:seed
