@@ -1,9 +1,7 @@
 version: '3'
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: abdieryy/ajk-cicd-penugasan3
     container_name: tamiyochi-laravel
     volumes:
       - laravel_data:/var/www/html
