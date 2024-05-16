@@ -26,3 +26,18 @@ jobs:
         with:
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/ajk-cicd-penugasan3:latest
+
+  migrate:
+    steps:
+      - name: SSH to server and deploy
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          key: ${{ secrets.SSHKEY }}
+          script: |
+          docker pull abdieryy/ajk-cicd-penugasan3:latest
+          docker compose up -d
+          docker exec -it tamiyochi-laravel php artisan migrate
+          docker exec -it tamiyochi-laravel php artisan db:seed
