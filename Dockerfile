@@ -25,6 +25,8 @@ RUN curl -sS https://dl.yarnpkg.com/rpm/pubkey.gpg | gpg --import - \
 
 COPY . /var/www/html/
 
+COPY .env.example /var/www/html/.env
+
 RUN chmod 775 -R . \
     && chown -R www-data:www-data .
 
